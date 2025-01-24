@@ -17,10 +17,6 @@
 # # **PACE stages**
 # 
 
-# Throughout these project notebooks, you'll see references to the problem-solving framework PACE. The following notebook components are labeled with the respective PACE stage: Plan, Analyze, Construct, and Execute.
-
-# <img src="images/Plan.png" width="100" height="100" align=left>
-# 
 # 
 # ## **PACE: Plan**
 # 
@@ -765,34 +761,3 @@ df['monthly_drives_per_session_ratio'] = (df['drives']/df['sessions'])
 df.head(10)
 
 
-# ### **Task 4b. Conclusion**
-# 
-# Now that you've explored and visualized your data, the next step is to share your findings with Harriet Hadzic, Waze's Director of Data Analysis. Consider the following questions as you prepare to write your executive summary. Think about key points you may want to share with the team, and what information is most relevant to the user churn project.
-# 
-# **Questions:**
-# 
-# 1. What types of distributions did you notice in the variables? What did this tell you about the data?
-# 
-# > *Nearly all the variables were either very right-skewed or uniformly distributed. For the right-skewed distributions, this means that most users had values in the lower end of the range for that variable. For the uniform distributions, this means that users were generally equally likely to have values anywhere within the range for that variable.*
-# 
-# 2. Was there anything that led you to believe the data was erroneous or problematic in any way?
-# 
-# > *Most of the data was not problematic, and there was no indication that any single variable was completely wrong. However, several variables had highly improbable or perhaps even impossible outlying values, such as `driven_km_drives`. Some of the monthly variables also might be problematic, such as `activity_days` and `driving_days`, because one has a max value of 31 while the other has a max value of 30, indicating that data collection might not have occurred in the same month for both of these variables.*
-# 
-# 3. Did your investigation give rise to further questions that you would like to explore or ask the Waze team about?
-# 
-# > *Yes. I'd want to ask the Waze data team to confirm that the monthly variables were collected during the same month, given the fact that some have max values of 30 days while others have 31 days. I'd also want to learn why so many long-time users suddenly started using the app so much in just the last month. Was there anything that changed in the last month that might prompt this kind of behavior?*
-# 
-# 4. What percentage of users churned and what percentage were retained?
-# 
-# > *Less than 18% of users churned, and \~82% were retained.*
-# 
-# 5. What factors correlated with user churn? How?
-# 
-# > *Distance driven per driving day had a positive correlation with user churn. The farther a user drove on each driving day, the more likely they were to churn. On the other hand, number of driving days had a negative correlation with churn. Users who drove more days of the last month were less likely to churn.*
-# 
-# 6. Did newer uses have greater representation in this dataset than users with longer tenure? How do you know?
-# 
-# > *No. Users of all tenures from brand new to \~10 years were relatively evenly represented in the data. This is borne out by the histogram for `n_days_after_onboarding`, which reveals a uniform distribution for this variable.*
-
-# **Congratulations!** You've completed this lab. However, you may not notice a green check mark next to this item on Coursera's platform. Please continue your progress regardless of the check mark. Just click on the "save" icon at the top of this notebook to ensure your work has been logged.
